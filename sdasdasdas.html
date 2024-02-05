@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            transition: background-color 1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: purple;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .yesSquare {
+            background-color: green;
+        }
+
+        .noSquare {
+            background-color: red;
+        }
+
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="square yesSquare" onclick="displayMessage('Yes')">Yes</div>
+        <div class="square noSquare" onclick="moveButtonRandomly()" id="noSquare">No</div>
+    </div>
+
+    <script>
+        function displayMessage(answer) {
+            document.body.style.backgroundColor = 'green';
+
+            if (answer === 'Yes') {
+                document.body.innerHTML = '<h1>I DON\'T DATE OGRES</h1>';
+            } else {
+                var noSquare = document.getElementById('noSquare');
+                noSquare.classList.add('disabled');
+                document.body.innerHTML = '<h1>I DON\'T DATE OGRES</h1>';
+            }
+        }
+
+        function moveButtonRandomly() {
+            alert("You can't escape! Click 'Yes' instead.");
+        }
+    </script>
+
+</body>
+</html>
